@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="./reset.css">
+	<link rel="stylesheet" type="text/css" href="./common.css">
+	<link rel="stylesheet" type="text/css" href="./flexbox.css">
+	
+	<link rel="stylesheet" type="text/css" href="./nav.css">
+	<link rel="stylesheet" type="text/css" href="./header.css">
+	<link rel="stylesheet" type="text/css" href="./article.css">
+	
+	<!--[if lt IE 9]>
+	<script type="text/javascript" src="./html5shiv.min.js"></script>
+	<script type="text/javascript" src="./respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<nav>
+		<div class="nav-container">
+			<a href="#" class="nav-item">首页</a>
+			<a href="#" class="nav-item">关于我</a>
+			<a href="#" class="nav-item">开源项目</a>
+			<a href="#" class="nav-item">订阅</a>
+		</div>
+	</nav>
+	<header class="flex-enable flex-column flex-justify-space-around">
+		<div class="header-text-container">
+			<h1 class="header-article_title">非常长的巨大标题</h1>
+			<time class="header-article_pub">2015年3月10日</time>
+		</div>
+	</header>
+	<main>
+		<article>
+			<p>浏览器的脚本引擎有一个不足之处是，你无法通过javascript语法强制让脚本引擎进行垃圾回收（Garbage Collection，在文中以GC代替）和内存释放。虽然你可以在脚本中执行 delete someVariable 或者 someVariable = null 又或者 someVariable = void 0。但事实上你做的都只是删除了变量对某个对象的引用而已，至于被删除引用的对象是否能够被回收，又何时能否被回收，这就只能由脚本引擎说得算了。
+
+这会留下一个性能上的隐患，因为GC也是要消耗浏览器资源的。理想的状态应该是在浏览器进程空闲的时候进行GC，相反如果GC发生的同时也有许多脚本需要处理，这务必会影响程序的性能。为了保证良好的用户体验，我们要尽可能让程序的刷新率靠近每秒60帧。换而言之，你必须在16.7ms之内执行完每一帧的所有脚本。
+
+这篇文章主要分为两部分，一是关于浏览器的脚本引擎如何进行垃圾回收；二是如何使用Object Pool解决GC引起性能问题。</p>
+
+			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis nec urna justo. Duis porttitor ex tellus, vitae venenatis erat ornare sed. Pellentesque nec justo vel tortor bibendum convallis. Pellentesque a elit gravida, pretium dui eget, consequat ante. Aenean et erat et quam porta vestibulum non vel est. Integer imperdiet felis eu libero aliquet condimentum. Donec placerat, elit id auctor lobortis, purus nisi scelerisque ipsum, eu volutpat metus ligula a sem. Aenean tincidunt pulvinar est. Integer ipsum lacus, maximus vitae nibh ut, placerat tincidunt ligula. Nam viverra at ante sed dapibus. Suspendisse lobortis metus ut vestibulum ultrices. Sed vestibulum quam sed velit ultricies mollis. Nullam enim ligula, rutrum quis quam nec, ornare scelerisque odio. Proin varius lobortis justo in tincidunt. Cras sodales tortor nibh.</p>
+
+			<p>Vivamus hendrerit erat eu vehicula rutrum. Fusce vitae justo scelerisque, lobortis sem quis, convallis erat. Vestibulum et tortor nunc. Maecenas sed suscipit diam. Proin in tellus lectus. Donec eu nibh eu lacus sodales aliquam nec iaculis ipsum. Aliquam erat volutpat.</p> 
+
+			<p>Nam sollicitudin lorem est, id interdum lectus dictum ut. Aliquam risus lectus, venenatis at scelerisque eu, venenatis congue eros. In hac habitasse platea dictumst. Vestibulum vel magna nunc. Nunc fermentum bibendum tortor, eu condimentum ligula placerat nec. In ac tellus orci. Quisque varius tellus et tristique fermentum. In ac mauris tempus, suscipit nibh nec, fermentum sapien. Aliquam viverra maximus nisi id bibendum.</p>
+
+			<p>Phasellus accumsan tortor eu volutpat iaculis. Aenean eget auctor quam. Nulla in eros eu ligula eleifend ultrices ut eget orci. Proin posuere varius sapien, vitae vehicula diam tincidunt et. Aliquam ornare a nulla ut finibus. Sed dui enim, suscipit eu maximus vitae, rhoncus ut sem. Vestibulum turpis leo, pellentesque nec egestas sed, posuere nec sapien. Nam vestibulum, lectus quis aliquet rutrum, magna massa dignissim orci, nec commodo ex metus eget sapien. Etiam gravida auctor velit, quis venenatis mi malesuada eu. Maecenas vel dictum lacus. Proin venenatis erat consequat ligula vestibulum imperdiet. Nunc congue metus eu mi scelerisque sollicitudin vitae at ipsum.</p>
+
+			<p>Duis cursus leo sed nulla volutpat viverra. Nunc vestibulum porttitor efficitur. Quisque semper dictum justo id tempus. Mauris quis laoreet est. Aliquam non massa in nunc rhoncus fermentum eget nec velit. Nam vel bibendum dui. Donec aliquam turpis diam, ut pellentesque est ultrices id. Nam posuere ante eget velit pharetra, a rhoncus odio laoreet. Curabitur in justo felis. Fusce ac viverra ante, quis finibus mi. Mauris euismod nisl porttitor gravida imperdiet. Aliquam pellentesque, turpis ac tempor blandit, elit eros vulputate mi, eu gravida nulla nulla et sapien. Integer elementum sollicitudin ipsum nec consequat.</p>
+		</article>		
+	</main>
+	
+</body>
+</html>

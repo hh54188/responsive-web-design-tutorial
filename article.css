@@ -1,0 +1,23 @@
+article {
+	font-size: 1rem;
+	line-height: 1.625rem; /* 26px / 16px = 1.625  */
+	max-width: 42.8125em; /* 685px / 16px = 42.8125em */
+	margin: 0 auto;
+
+	box-sizing: border-box;
+	padding: 1.25em; /* 20px / 16px = 1.25 */
+}
+
+
+@media all and (min-width: 600px) and (max-width: 685px) {
+	article {
+		padding: 2.5em; /* 40px / 16px = 2.5 */
+	}
+}
+
+@media all and (min-width: 685px)  {
+	article {
+		padding: 0;
+		margin-top: 2.5em; /* 40px / 16px = 2.5 */
+	}
+}

@@ -1,0 +1,70 @@
+header {
+	display: block;
+	font-size: 1.5rem; /* 24px / 16px = 1.5 */
+	font-weight: 700;
+
+	height: 500px;
+	height: 80vh;
+	
+	min-height: 300px;
+	max-height: 1080px;
+
+	background: #c24c4c;
+	
+
+
+	position: relative;
+	overflow: hidden;
+}
+
+@media all and (min-width: 480px) {
+
+	header {
+		font-size: 2.5rem; /* 40px / 16px = 2.5 */
+		
+		background: url('./images/bg.jpg');
+		background-position: 50% 0;
+		background-repeat: no-repeat;	
+
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		background-size: cover;		
+	}
+}
+
+.header-text-container {
+	text-align: center;
+	color: white;
+	text-shadow: 1px 1px 4px rgba(34,34,34,0.6);
+
+	/* 
+		以下是另两种居中办法
+		目前采用的是flex-box 
+	*/
+
+
+	/*    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    height: 30%;
+	    width: 50%;
+	    margin: -15% 0 0 -25%;
+	*/
+
+
+	/*
+		transform: translate(-50%, -50%);
+		position: absolute;
+	  	top: 50%;
+	  	left: 50%;
+	*/
+}
+
+.header-article_title {
+	font-size: 2em; /* 80px / 40px = 2 */
+}
+
+.header-article_pub {
+	display: block;
+	font-size: 1em; /* 40px / 40px = 1 */
+}
