@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        * { margin: 0;padding: 0;}
+        a { text-decoration: none;}
+        li { list-style-type: none;}
+
+        nav {
+            background:#25383C;
+            font-family: "思源黑体";
+        }
+
+        nav a {
+            color: white;
+        }
+
+        .nav-container {
+            margin: 0 auto;
+            /*height: 100%;*/
+        }
+
+        .nav-list-item {
+            display: block;
+        }
+
+        .nav-list-item a {
+            display: block;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+        }
+
+
+
+        @media all and (min-width: 1000px) {
+/*            nav {
+                height: 50px;
+            }*/
+
+            .nav-container:after {
+                content: ""; 
+                clear: both; 
+                display: block;
+            }
+
+            .nav-list-item {
+                /*width: 25%;*/
+                /*width: calc(100% / 4);*/
+                padding: 10px 20px;
+                float: left;
+            }
+
+            .nav-container {
+                max-width: 1280px; /* Or 960px*/         
+            }
+        }        
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-container-list">
+                <li class="nav-list-item">
+                    <a href="#">Item1</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="#">Item2</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="#">Item3</a>
+                </li>
+                <li class="nav-list-item">
+                    <a href="#">Item4</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</body>
+</html>
