@@ -24,7 +24,7 @@
 			text-align: center; 
 		}
 
-		.nav-container {
+		.nav-container-list {
 			max-width: 1280px; 
 			margin: 0 auto;
 		}
@@ -38,21 +38,20 @@
 		}
 
 		.clearfix {
+			display: block;
 			clear: both;
 		}
 	</style>
 </head>
 <body>
 	<nav>
-		<div class="nav-container">
-			<ul class="nav-container-list">
-				<li class="nav-list-item"><a href="">Item1</a></li>
-				<li class="nav-list-item"><a href="">Item2 is a extremely item, here is for test</a></li>
-				<li class="nav-list-item"><a href="">Item3</a></li>
-				<li class="nav-list-item"><a href="">Item4 is also a very long item</a></li>
-			</ul>
-			<div class="clearfix"></div>
-		</div>
+		<ul class="nav-container-list">
+			<li class="nav-list-item"><a href="">Item1</a></li>
+			<li class="nav-list-item"><a href="">Item2 is a extremely item, here is for test</a></li>
+			<li class="nav-list-item"><a href="">Item3</a></li>
+			<li class="nav-list-item"><a href="">Item4 is also a very long item</a></li>
+			<li class="clearfix"></li>
+		</ul>
 	</nav>
 </body>
 </html>

@@ -27,9 +27,10 @@
 			text-align: center;
 		}
 
-		.nav-container {
+
+		.nav-container-list {
 			max-width: 1280px; /* 为了不使菜单选项过于分散 */
-			margin: 0 auto;
+			margin: 0 auto;			
 		}
 
 		.nav-list-item {
@@ -38,7 +39,8 @@
 			width: calc(100% / 4);  /* 新增：动态计算宽度值 */
 		}
 
-		.clearfix {5
+		.clearfix {
+			display: block;
 			clear: both;
 		}
 	</style>
@@ -46,16 +48,14 @@
 <body>
 	<nav>
 		<!--新增，为了让选项链接在页面上不过于分散-->
-		<div class="nav-container">
-			<ul class="nav-container-list">
-				<!--Bad: a标签点击区域过小，影响用户体验-->
-				<li class="nav-list-item"><a href="">Item1</a></li>
-				<li class="nav-list-item"><a href="">Item2 is a extremely item, here is for test</a></li>
-				<li class="nav-list-item"><a href="">Item3</a></li>
-				<li class="nav-list-item"><a href="">Item4 is also a very long item</a></li>
-			</ul>
-			<div class="clearfix"></div>
-		</div>
+		<ul class="nav-container-list">
+			<!--Bad: a标签点击区域过小，影响用户体验-->
+			<li class="nav-list-item"><a href="">Item1</a></li>
+			<li class="nav-list-item"><a href="">Item2 is a extremely item, here is for test</a></li>
+			<li class="nav-list-item"><a href="">Item3</a></li>
+			<li class="nav-list-item"><a href="">Item4 is also a very long item</a></li>
+			<li class="clearfix"></li>
+		</ul>
 	</nav>
 </body>
 </html>
