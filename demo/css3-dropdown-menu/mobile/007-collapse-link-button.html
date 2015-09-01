@@ -20,15 +20,16 @@
 			text-align: center;
 		}
 
+		.nav-container-list {
+			display: none;
+		}
+		
 		.nav-list-item a {
 			color: white;
 			display: block;
 			padding: 20px 40px;			
 		}
 
-		.nav-list-item:hover > ul {
-			display: block;
-		}
 		.menu-btn {
 			border: none;
 			padding: 8px 0;
@@ -38,47 +39,52 @@
 			display: block;
 			clear: both;
 		}
+		.icon-menu {
+			background: url("./images/icon.png") no-repeat center center;
+		}
+		.icon-cross {
+			background: url("./images/cross.png") no-repeat center center;	
+		}
 		.menu-btn-icon {
+			display: block;
 			border: none;
 			width: 30px;
 			height: 30px;
-			background: url("./images/icon.png") no-repeat center center;
 			background-size: cover;
-			float: left;
 			cursor: pointer;
+			float: left;
 			margin-left: 10px;
 		}
+
+		/*
+			选择器 X > Y
+			后代选择器，只选择直接子元素，不能选择**子孙**元素
+		*/
+		#nav:target > ul {
+			display: block;
+		}
+
+		#nav:not(:target) > div > a:last-of-type {
+			display: none;
+		}
+
+		#nav:target > div > a:first-of-type {
+			display: none;
+		}		
 	</style>
 </head>
 <body>
-	<nav>
+	<nav id="nav">
 		<div class="menu-btn">
-			<button class="menu-btn-icon"></button>
+			<a href="#nav" class="menu-btn-icon icon-menu"  href=""></a>
+			<a href="#" class="menu-btn-icon icon-cross"  href=""></a>
 		</div>
 		<ul class="nav-container-list">
 			<li class="nav-list-item"><a href="">Item1</a></li>
-			<li class="nav-list-item">
-				<a href="">Item2</a>
-			</li>
+			<li class="nav-list-item"><a href="">Item2</a></li>
 			<li class="nav-list-item"><a href="">Item3</a></li>
 			<li class="nav-list-item"><a href="">Item4</a></li>
 		</ul>
 	</nav>
-	<script type="text/javascript">
-		var btn = document.querySelector('.menu-btn-icon');
-		var menu = document.querySelector('.nav-container-list');
-		var menuIsCollapse = true;
-
-		btn.onclick = function () {
-			menuIsCollapse = !menuIsCollapse;			
-			if (menuIsCollapse) {
-				menu.style.display = 'block';
-			} else {
-				menu.style.display = 'none';
-			}
-			console.log(menuIsCollapse);
-		}
-
-	</script>
 </body>
 </html>
