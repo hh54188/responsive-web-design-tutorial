@@ -38,11 +38,16 @@
 			display: block;
 			clear: both;
 		}
+		.btn-icon-close {
+			background: url("./images/cross.png") no-repeat center center;			
+		}
+		.btn-icon-menu {
+			background: url("./images/icon.png") no-repeat center center;			
+		}
 		.menu-btn-icon {
 			border: none;
 			width: 30px;
 			height: 30px;
-			background: url("./images/cross.png") no-repeat center center;
 			background-size: cover; /* 保证背景图片始终覆盖容器 */ 
 			float: left;
 			cursor: pointer;
@@ -53,7 +58,7 @@
 <body>
 	<nav>
 		<div class="menu-btn">
-			<a href="javascript:void(0)" class="menu-btn-icon"></a>
+			<a href="javascript:void(0)" class="menu-btn-icon btn-icon-close"></a>
 			<div class="clearfix"></div>
 		</div>
 		<ul class="nav-container-list">
@@ -68,18 +73,19 @@
 	<script type="text/javascript">
 		var btn = document.querySelector('.menu-btn-icon');
 		var menu = document.querySelector('.nav-container-list');
-		var menuIsCollapse = true;
+		var menuIsCollapse = false;
 
 		btn.onclick = function () {
 			menuIsCollapse = !menuIsCollapse;			
 			if (menuIsCollapse) {
-				menu.style.display = 'block';
-				btn.style.backgroundImage = 'url(./images/cross.png)';
-			} else {
 				menu.style.display = 'none';
-				btn.style.backgroundImage = 'url(./images/icon.png)';
+				btn.classList.remove('btn-icon-close');
+				btn.classList.add('btn-icon-menu');
+			} else {
+				menu.style.display = 'block';
+				btn.classList.remove('btn-icon-menu');
+				btn.classList.add('btn-icon-close');
 			}
-			console.log(menuIsCollapse);
 		}
 
 	</script>
