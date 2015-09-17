@@ -1,0 +1,73 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+a {
+	text-decoration: none;
+	color: white;
+}
+li {
+	list-style-type: none;
+}
+
+nav, .nav,.nav-submenu-list {
+	background:#25383C;			
+	text-align: center; 
+}
+
+.nav-list-item a {
+	color: white;
+	display: block;
+	padding: 20px 40px;			
+}
+
+.nav-submenu-list {
+	display: none;
+}
+
+.nav-list-item:hover > ul {
+	display: block;
+}
+.menu-btn {
+	border: none;
+	padding: 8px 0;
+}
+.clearfix {
+	content: '';
+	display: block;
+	clear: both;
+}
+.menu-btn-icon {
+	border: none;
+	width: 30px;
+	height: 30px;
+	/*background: url("./images/cross.png") no-repeat center center;*/
+	/*background-size: cover; */
+	float: left;
+	cursor: pointer;
+	margin-left: 10px;
+}	
+
+@media all and (min-width: 480px) {
+	.nav-list-item {
+		display: inline-block;
+		position: relative;
+	}
+
+	.nav-submenu-list {
+		display: none;
+
+		position: absolute;
+		left: 0;
+		top: 100%;
+	}
+
+	.nav-container-list {
+		max-width: 1280px; /* 最大宽度不超过1280px */
+		margin: 0 auto;	/* 容器居中 */	
+	}
+
+	.menu-btn {
+		display:none;
+	}
+}

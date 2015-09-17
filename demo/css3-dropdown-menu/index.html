@@ -1,4 +1,3 @@
-<!--重置样式-->
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,20 +9,25 @@
 		}
 		a {
 			text-decoration: none;
+			color: white;
 		}
 		li {
 			list-style-type: none;
 		}
 
 		nav {
-			background:#25383C;	
-			text-align: center;
+			background:#25383C;			
+			text-align: center; 
 		}
 
 		.nav-list-item a {
 			color: white;
 			display: block;
 			padding: 20px 40px;			
+		}
+		
+		.nav-submenu-list {
+			display: none;
 		}
 
 		.nav-list-item:hover > ul {
@@ -42,13 +46,39 @@
 			border: none;
 			width: 30px;
 			height: 30px;
-			background: url("./images/cross.png") no-repeat center center;
-			background-size: cover; /* 保证背景图片始终覆盖容器 */ 
+			/*background: url("./images/cross.png") no-repeat center center;*/
+			/*background-size: cover; */
 			float: left;
 			cursor: pointer;
 			margin-left: 10px;
-		}
+		}	
+
+		@media all and (min-width: 480px) {
+			.nav-list-item {
+				display: inline-block;
+				position: relative;
+			}
+
+			.nav-submenu-list {
+				display: none;
+
+				position: absolute;
+				left: 0;
+				top: 100%;
+			}
+
+			.nav-container-list {
+				max-width: 1280px; /* 最大宽度不超过1280px */
+				margin: 0 auto;	/* 容器居中 */	
+			}
+
+			.menu-btn {
+				display:none;
+			}
+		}		
+
 	</style>
+	<script type="text/javascript" src='./respond.min.js'></script>
 </head>
 <body>
 	<nav>
@@ -60,28 +90,16 @@
 			<li class="nav-list-item"><a href="">Item1</a></li>
 			<li class="nav-list-item">
 				<a href="">Item2</a>
+				<ul class="nav-submenu-list">
+					<li><a href="">Submenu Item1</a></li>
+					<li><a href="">Submenu Item2</a></li>
+					<li><a href="">Submenu Item3</a></li>
+					<li><a href="">Submenu Item4</a></li>
+				</ul>				
 			</li>
 			<li class="nav-list-item"><a href="">Item3</a></li>
 			<li class="nav-list-item"><a href="">Item4</a></li>
 		</ul>
 	</nav>
-	<script type="text/javascript">
-		var btn = document.querySelector('.menu-btn-icon');
-		var menu = document.querySelector('.nav-container-list');
-		var menuIsCollapse = true;
-
-		btn.onclick = function () {
-			menuIsCollapse = !menuIsCollapse;			
-			if (menuIsCollapse) {
-				menu.style.display = 'block';
-				btn.style.backgroundImage = 'url(./images/cross.png)';
-			} else {
-				menu.style.display = 'none';
-				btn.style.backgroundImage = 'url(./images/icon.png)';
-			}
-			console.log(menuIsCollapse);
-		}
-
-	</script>
 </body>
 </html>
