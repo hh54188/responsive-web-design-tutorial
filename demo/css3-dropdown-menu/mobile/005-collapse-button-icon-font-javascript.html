@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="./font-icon/icomoon/style.css">
 	<style type="text/css">
 		* {
 			margin: 0;
@@ -38,13 +39,9 @@
 			display: block;
 			clear: both;
 		}
-		.btn-icon-close {
-			background: url("./images/cross.png") no-repeat center center;			
-		}
-		.btn-icon-menu {
-			background: url("./images/icon.png") no-repeat center center;			
-		}
 		.menu-btn-icon {
+			font-size: 30px;
+			color: white;
 			border: none;
 			width: 30px;
 			height: 30px;
@@ -58,7 +55,7 @@
 <body>
 	<nav>
 		<div class="menu-btn">
-			<a href="javascript:void(0)" class="menu-btn-icon btn-icon-close"></a>
+			<a href="javascript:void(0)" class="menu-btn-icon icon icon-cross"></a>
 			<div class="clearfix"></div>
 		</div>
 		<ul class="nav-container-list">
@@ -79,12 +76,12 @@
 			menuIsCollapse = !menuIsCollapse;			
 			if (menuIsCollapse) {
 				menu.style.display = 'none';
-				btn.classList.remove('btn-icon-close');
-				btn.classList.add('btn-icon-menu');
+				btn.classList.remove('icon-cross');
+				btn.classList.add('icon-menu');
 			} else {
 				menu.style.display = 'block';
-				btn.classList.remove('btn-icon-menu');
-				btn.classList.add('btn-icon-close');
+				btn.classList.remove('icon-menu');
+				btn.classList.add('icon-cross');
 			}
 		}
 
