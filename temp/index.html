@@ -3,21 +3,20 @@
 <head>
 	<title></title>
 	<style type="text/css">
-	body {
-		padding: 20px;
+	.margin {
+		height: 2000px;
 	}
-		h1:before {
-			content: "";
-			display: block;
-			width: 50px;
-			height: 50px;
-			background: red;
-			box-shadow: 0 0 10px black;
-			transform: rotate(45deg);
-		}		
+	#myDiv {
+		border:1px solid black;
+	}
+	#myDiv:target {
+		background:red;
+	}
 	</style>
 </head>
 <body>
-	<h1>This is the target</h1>
+	<a href="#myDiv">link to target</a>
+	<div class="margin"></div>
+	<div id="myDiv">This is my div</div>
 </body>
 </html>
