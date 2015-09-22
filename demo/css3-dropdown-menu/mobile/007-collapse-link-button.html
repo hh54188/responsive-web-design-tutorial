@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="./font-icon/icomoon/style.css">
 	<style type="text/css">
 		* {
 			margin: 0;
@@ -15,9 +16,19 @@
 			list-style-type: none;
 		}
 
+		html {
+			height: 3000px;
+		}
+
 		nav {
 			background:#25383C;	
 			text-align: center;
+			
+			width: 100%;
+
+			position: fixed;
+			top: 0;
+			left: 0;
 		}
 
 		.nav-container-list {
@@ -39,20 +50,15 @@
 			display: block;
 			clear: both;
 		}
-		.icon-menu {
-			background: url("./images/icon.png") no-repeat center center;
-		}
-		.icon-cross {
-			background: url("./images/cross.png") no-repeat center center;	
-		}
 		.menu-btn-icon {
-			display: block;
+			font-size: 30px;
+			color: white;
 			border: none;
 			width: 30px;
 			height: 30px;
-			background-size: cover;
-			cursor: pointer;
+			background-size: cover; /* 保证背景图片始终覆盖容器 */ 
 			float: left;
+			cursor: pointer;
 			margin-left: 10px;
 		}
 
@@ -76,8 +82,8 @@
 <body>
 	<nav id="nav">
 		<div class="menu-btn">
-			<a href="#nav" class="menu-btn-icon icon-menu"  href=""></a>
-			<a href="#" class="menu-btn-icon icon-cross"  href=""></a>
+			<a href="#nav" class="menu-btn-icon icon icon-menu"  href=""></a>
+			<a href="#" class="menu-btn-icon icon icon-cross"  href=""></a>
 		</div>
 		<ul class="nav-container-list">
 			<li class="nav-list-item"><a href="">Item1</a></li>

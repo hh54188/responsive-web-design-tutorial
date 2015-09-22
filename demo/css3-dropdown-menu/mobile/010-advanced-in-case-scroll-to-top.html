@@ -14,9 +14,14 @@
 			list-style-type: none;
 		}
 
+		html {
+			height: 3000px;
+		}
+
 		nav {
 			background:#25383C;	
 			text-align: center;
+
 			position: fixed;
 			top: 0;
 			left: 0;
@@ -80,7 +85,7 @@
 	<nav id="nav">
 		<div class="menu-btn">
 			<a href="#nav" class="menu-btn-icon icon-menu"  href=""></a>
-			<a href="#doesntexist" class="menu-btn-icon icon-cross"  href=""></a>			
+			<a href="#idNotExist" class="menu-btn-icon icon-cross"  href=""></a>			
 		</div>
 		<ul class="nav-container-list">
 			<li class="nav-list-item"><a href="">Item1</a></li>
@@ -90,29 +95,29 @@
 		</ul>
 	</nav>
 	<script type="text/javascript">
-		var btns = document.querySelectorAll('.menu-btn-icon');
+		// var btns = document.querySelectorAll('.menu-btn-icon');
 		
-		function preventDefault(event) {
+		// function preventDefault(event) {
 			/*
 				如果只是阻止默认事情发生event.preventDefault()
 				菜单也无法展开，因为hash无法发生更改
 			*/
-			return false;
-			event.preventDefault();
+			// return false;
+			// event.preventDefault();
 			/*
 				所以同时也要更改hash值
 			*/
-			hash = this.getAttribute("href");
-    		window.location = hash;
+			// hash = this.getAttribute("href");
+    		// window.location = hash;
     		/*
 				事实上近年经过测试
 				只要绑定了事件就可以阻止滚动
     		*/
-		}
+		// }
 
-		for (var i = 0; i < btns.length; i++) {
-			btns[i].addEventListener('click', preventDefault);
-		}
+		// for (var i = 0; i < btns.length; i++) {
+			// btns[i].addEventListener('click', preventDefault);
+		// }
 	</script>
 	<article>
 		<p>You'll notice that we only specified one delay time, while we are using two transitions: visibility and opacity. According to the CSS3 specification, when there aren't enough delay values to go around, they are repeated to apply to all transitions. In this case, the opacity transition had a 0s delay by default so it actually doesn't change.How about that, it works! With a temporary change in the delay value of the transition, we successfully created a drop-down menu that both fades-in and fades-out very nicely, and also doesn't interfere with content beneath it. But is looking nice the end of the story?</p>
@@ -149,5 +154,6 @@
 
 		<p>You'll notice that we only specified one delay time, while we are using two transitions: visibility and opacity. According to the CSS3 specification, when there aren't enough delay values to go around, they are repeated to apply to all transitions. In this case, the opacity transition had a 0s delay by default so it actually doesn't change.How about that, it works! With a temporary change in the delay value of the transition, we successfully created a drop-down menu that both fades-in and fades-out very nicely, and also doesn't interfere with content beneath it. But is looking nice the end of the story?</p>																										
 	</article>
+	<div id="idNotExist">This is the target div</div>
 </body>
 </html>
