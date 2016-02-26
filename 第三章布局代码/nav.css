@@ -1,0 +1,59 @@
+ul {
+    margin:0;
+    padding:0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style-type: none;
+}
+
+nav {
+    background:#25383C;         
+    text-align: center; /* 为了让文字居中 flex中取消 */
+}
+
+/* 通用样式部分 */
+nav, .nav-submenu-list {
+    background:#25383C;         
+    text-align: center; /* 为了让文字居中 flex中取消 */
+}
+
+.nav-container-list {
+    max-width: 1280px; /* 最大宽度不超过1280px */
+    margin: 0 auto; /* 容器居中 */  
+}
+.nav-list-item {
+    color: white;
+    position: relative;
+    
+    display:inline-block; /* flex中取消 */
+    /*width: 25%;*/
+    /*float: left;*/
+    /*width: calc(100% / 4); */
+}
+
+.nav-submenu-list {
+    display: none;
+
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+.nav-list-item a {
+    display:block; /* 设置为块级元素才能使上下内边距生效 */
+    padding: 20px 40px;
+}
+
+.nav-list-item:hover > ul {
+    display: block;
+}
+.clearfix {
+    display: block;
+    clear: both;
+}

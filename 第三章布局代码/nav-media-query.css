@@ -1,0 +1,86 @@
+ul {
+    margin:0;
+    padding:0;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+li {
+    list-style-type: none;
+}
+
+nav {
+    background:#25383C;         
+    text-align: center; /* 为了让文字居中 */
+}
+
+/*
+    样式重置与通用部分忽略 
+ */
+.nav-list-item a {
+    color: white;
+    display: block;
+    padding: 20px 40px;         
+}
+.nav-list-item:hover > ul {
+    display: block;
+}
+
+.nav-submenu-list {
+    display: none;
+}
+/*
+    按钮样式部分也首先忽略
+ */
+
+.menu-btn {
+    border: none;
+    padding: 8px 0;
+}
+.clearfix {
+    content: '';
+    display: block;
+    clear: both;
+}
+/*.btn-icon-close {
+    background: url("./cross.png") no-repeat center center;          
+}
+.btn-icon-menu {
+    background: url("./menu.png") no-repeat center center;           
+}*/
+.menu-btn-icon {
+    border: none;
+    width: 30px;
+    height: 30px;
+    background-size: cover; /* 保证背景图片始终覆盖容器 */ 
+    float: left;
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+@media all and (min-width: 480px) {
+    .nav-list-item {
+        display: inline-block;
+        position: relative;
+    }
+
+    .nav-submenu-list {
+        display: none;
+
+        position: absolute;
+        left: 0;
+        top: 100%;
+    }
+
+    .nav-container-list {
+        max-width: 1280px; 
+        margin: 0 auto;     
+    }
+
+    /* 别忘了，在桌面导航中我们不需要收起按钮 */
+    .menu-btn {
+        display:none;
+    }
