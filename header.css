@@ -1,36 +1,22 @@
 header {
+
+	width: 100%;
+	height: 400px;
+	height: 50vh;
+	background: #3F3244;
+
 	display: block;
 	font-size: 1.5rem; /* 24px / 16px = 1.5 */
 	font-weight: 700;
-
-	height: 500px;
-	height: 80vh;
 	
-	min-height: 300px;
+	min-height: 360px;
 	max-height: 1080px;
-
-	background: #c24c4c;
 	
-
-
 	position: relative;
 	overflow: hidden;
 }
 
-@media all and (min-width: 480px) {
 
-	header {
-		font-size: 2.5rem; /* 40px / 16px = 2.5 */
-		
-		background: url('./images/bg.jpg');
-		background-position: 50% 0;
-		background-repeat: no-repeat;	
-
-		-webkit-background-size: cover;
-		-moz-background-size: cover;
-		background-size: cover;		
-	}
-}
 
 .header-text-container {
 	text-align: center;
@@ -38,18 +24,18 @@ header {
 	text-shadow: 1px 1px 4px rgba(34,34,34,0.6);
 
 	/* 
-		以下是另两种居中办法
-		目前采用的是flex-box 
+		如果采用flex，
+		则需要在header上添加class：
+		flex-enable flex-column flex-justify-space-around
 	*/
 
 
-	/*    position: absolute;
-	    top: 50%;
-	    left: 50%;
-	    height: 30%;
-	    width: 50%;
-	    margin: -15% 0 0 -25%;
-	*/
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 30%;
+    width: 50%;
+    margin: -30% 0 0 -25%;	
 
 
 	/*
@@ -59,12 +45,36 @@ header {
 	  	left: 50%;
 	*/
 }
-
 .header-article_title {
-	font-size: 2em; /* 80px / 40px = 2 */
+	font-size: 1.5em; /* 60px / 40px = 1.5 */
+	font-weight: normal;
+	text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    margin-bottom: 0.5em; /* 20px / 40px = 0.5 */
+}
+
+.flex-enable .header-article_title {	
+    margin-top: -2.5em; /* 100px / 40px = 2.5*/
 }
 
 .header-article_pub {
 	display: block;
-	font-size: 1em; /* 40px / 40px = 1 */
+	font-size: 0.6em; /* 24px / 40px = 0.6 */
+	text-shadow: 0 0 0.25em rgba(0,0,0,0.7); /* 10px / 40px = 0.25*/
+	font-weight: normal;
+}
+
+
+
+@media all and (min-width: 480px) {
+	header {
+		font-size: 2.5rem; /* 40px / 16px = 2.5 */
+	}
+	.header-text-container {
+	    margin: -10% 0 0 -25%;
+	}
+}
+@media all and (min-width: 480px) and (max-width: 930px) {
+	.header-text-container {
+	    margin: -25% 0 0 -25%;
+	}
 }
