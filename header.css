@@ -70,11 +70,11 @@ header {
 		font-size: 2.5rem; /* 40px / 16px = 2.5 */
 	}
 	.header-text-container {
-	    margin: -10% 0 0 -25%;
+	    margin: -7% 0 0 -25%;
 	}
 }
 @media all and (min-width: 480px) and (max-width: 930px) {
 	.header-text-container {
-	    margin: -25% 0 0 -25%;
+	    margin: -20% 0 0 -25%;
 	}
 }
