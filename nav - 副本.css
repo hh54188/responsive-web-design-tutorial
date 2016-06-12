@@ -1,0 +1,37 @@
+
+nav {
+	background:#2F2235;
+}
+
+.nav-container {
+	margin: 0 auto;
+	height: 100%;
+}
+
+
+.nav-item {
+	cursor: pointer;
+	display: block;
+
+	text-align: center;
+	color: white;
+
+	height: 50px;
+	line-height: 50px;
+}
+
+@media all and (min-width: 480px) {
+	nav {
+		height: 50px;
+	}
+
+	.nav-item {
+		width: 25%;
+		width: calc(100% / 4);
+		float: left;
+	}
+
+	.nav-container {
+		max-width: 960px;     	
+	}
+}
