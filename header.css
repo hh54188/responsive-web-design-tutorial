@@ -16,35 +16,28 @@ header {
 	overflow: hidden;
 }
 
-
-
-.header-text-container {
-	text-align: center;
-	color: white;
-	text-shadow: 1px 1px 4px rgba(34,34,34,0.6);
-
-	/* 
-		如果采用flex，
-		则需要在header上添加class：
-		flex-enable flex-column flex-justify-space-around
-	*/
-
-
+.flexbox-unavailable .header-text-container {
 	position: absolute;
     top: 50%;
     left: 50%;
     height: 30%;
     width: 50%;
-    margin: -30% 0 0 -25%;	
-
-
-	/*
-		transform: translate(-50%, -50%);
-		position: absolute;
-	  	top: 50%;
-	  	left: 50%;
-	*/
+    margin: -30% 0 0 -25%;
 }
+
+.csstransforms .header-text-container {
+	transform: translate(-50%, -50%);
+	position: absolute;
+  	top: 40%;
+  	left: 50%;
+}
+
+.header-text-container {
+	text-align: center;
+	color: white;
+	text-shadow: 1px 1px 4px rgba(34,34,34,0.6);
+}
+
 .header-article_title {
 	font-size: 1.5em; /* 60px / 40px = 1.5 */
 	font-weight: normal;
@@ -52,9 +45,6 @@ header {
     margin-bottom: 0.5em; /* 20px / 40px = 0.5 */
 }
 
-.flex-enable .header-article_title {	
-    margin-top: -2.5em; /* 100px / 40px = 2.5*/
-}
 
 .header-article_pub {
 	display: block;
@@ -64,17 +54,25 @@ header {
 }
 
 
+@media all and (min-width: 480px) {
+	.flexbox .header-text-container{
+		margin: 0;
+	}
+	.flexbox .header-article_title {	
+	    margin-top: -1.5em; /* 100px / 40px = 2.5*/
+	}	
+}
 
 @media all and (min-width: 480px) {
 	header {
 		font-size: 2.5rem; /* 40px / 16px = 2.5 */
 	}
-	.header-text-container {
+	.flexbox-unavailable .header-text-container {
 	    margin: -7% 0 0 -25%;
 	}
 }
 @media all and (min-width: 480px) and (max-width: 930px) {
-	.header-text-container {
+	.flexbox-unavailable .header-text-container {
 	    margin: -20% 0 0 -25%;
 	}
 }

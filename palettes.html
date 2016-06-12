@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title></title>
+	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="./reset.css">
 	<link rel="stylesheet" type="text/css" href="./common.css">
@@ -11,28 +12,14 @@
 	<link rel="stylesheet" type="text/css" href="./article.css">	
 
 	<script type="text/javascript" src="./modernizr-custom.js"></script>
-	<script type="text/javascript">
-		if (Modernizr.flexbox) {
-			var externalStyle = document.createElement('link');
-			externalStyle.setAttribute('rel', 'stylesheet');
-			externalStyle.setAttribute('type', 'text/css');
-			externalStyle.setAttribute('href', './flexbox.css');
 
-			var head = document.querySelector('head');
-			head.appendChild(externalStyle);
-
-			var header = document.querySelector('header');
-			// header.classList.add('flex-enable flex-column flex-justify-space-around');
-		}
-	</script>
 	<!--[if lt IE 9]>
 	<script type="text/javascript" src="./html5shiv.min.js"></script>
 	<script type="text/javascript" src="./respond.min.js"></script>
 	<![endif]-->	
 </head>
 <body>
-<!-- https://coolors.co/app/dcdcdd-c5c3c6-46494c-4c5c68-1985a1 -->
-<!-- https://coolors.co/app/bfc3ba-a9aca9-60495a-3f3244-2f2235 -->
+<!-- 配色：https://coolors.co/app/bfc3ba-a9aca9-60495a-3f3244-2f2235 -->
 <nav>
 	<div class="nav-container">
 		<a href="#" class="nav-item">文章</a>
@@ -43,7 +30,7 @@
 </nav>
 <header>
 	<div class="header-text-container">
-		<h1 class="header-article_title">谢谢购买！</h1>
+		<h1 class="header-article_title">谢谢购买!</h1>
 		<time class="header-article_pub">2016年6月12日</time>
 	</div>		
 </header>
@@ -56,5 +43,24 @@
 		<p>谢谢。</p>
 	</article>
 </main>
+<script type="text/javascript">
+	// Modernizr.flexbox = false;
+	// document.documentElement.classList.remove('flexbox');
+
+	if (Modernizr.flexbox) {
+		var externalStyle = document.createElement('link');
+		externalStyle.setAttribute('rel', 'stylesheet');
+		externalStyle.setAttribute('type', 'text/css');
+		externalStyle.setAttribute('href', './flexbox.css');
+
+		var head = document.querySelector('head');
+		head.appendChild(externalStyle);
+
+		var header = document.querySelector('header');
+		header.classList.add('flex-enable', 'flex-column', 'flex-justify-space-around');
+	} else {
+		document.documentElement.classList.add('flexbox-unavailable');
+	}
+</script>
 </body>
 </html>
