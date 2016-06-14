@@ -4,12 +4,13 @@
 	<title></title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="./reset.css">
+	<link rel="stylesheet" type="text/css" href="./dist/style.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="./reset.css">
 	<link rel="stylesheet" type="text/css" href="./common.css">
 	
 	<link rel="stylesheet" type="text/css" href="./nav.css">
 	<link rel="stylesheet" type="text/css" href="./header.css">
-	<link rel="stylesheet" type="text/css" href="./article.css">	
+	<link rel="stylesheet" type="text/css" href="./article.css"> -->	
 
 	<script type="text/javascript" src="./modernizr-custom.js"></script>
 
@@ -22,14 +23,14 @@
 <!-- 配色：https://coolors.co/app/bfc3ba-a9aca9-60495a-3f3244-2f2235 -->
 <nav>		
 	<div class="menu-btn">
-		<a href="#nav" class="menu-btn-icon icon-img-menu"></a>
-		<a href="#" class="menu-btn-icon icon-img-cross"></a>
+		<button class="menu-btn-icon menu-btn-expand icon-img-menu"></button>
+		<button class="menu-btn-icon menu-btn-collapse icon-img-cross"></button>
 	</div>
 	<ul class="nav-container-list">
-		<li class="nav-list-item"><a href="">文章</a></li>
-		<li class="nav-list-item"><a href="">关于我</a></li>
-		<li class="nav-list-item"><a href="">开源项目</a></li>
-		<li class="nav-list-item"><a href="">订阅</a></li>			
+		<li class="nav-list-item"><a href="/posts">文章</a></li>
+		<li class="nav-list-item"><a href="/about">关于我</a></li>
+		<li class="nav-list-item"><a href="/project">开源项目</a></li>
+		<li class="nav-list-item"><a href="/feed.xml">订阅</a></li>			
 	</ul>
 </nav>
 <header>
@@ -48,9 +49,6 @@
 	</article>
 </main>
 <script type="text/javascript">
-	// Modernizr.flexbox = false;
-	// document.documentElement.classList.remove('flexbox');
-
 	if (Modernizr.flexbox) {
 		var externalStyle = document.createElement('link');
 		externalStyle.setAttribute('rel', 'stylesheet');
@@ -65,6 +63,21 @@
 	} else {
 		document.documentElement.classList.add('flexbox-unavailable');
 	}
+</script>
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+	var _gaq = _gaq || [];
+	var pluginUrl = 
+	'//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+	_gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+	_gaq.push(['_setAccount', 'UA-38061225-1']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
 </script>
 </body>
 </html>
